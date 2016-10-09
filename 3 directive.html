@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar vue</title>
+</head>
+<body>
+
+<div id="app">
+	<div v-if="done">
+{{ biodata }}
+		
+	</div>
+	<!-- v-show yang di ubah css nya -->
+	<!-- conditional directive -->
+	<<div v-else>
+		maaf done false
+	</div>
+	<<div v-show="this.umur < 10">
+		{{ umur }}
+	</div>
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		var vo = new Vue({
+			//elemen
+			el:'#app',
+			data:{
+				nama :"anwar",
+				umur :20,
+				biodata : '',
+				done:false
+			},
+			computed :{
+				biodata :{
+					get: function () {
+						return this.nama +" umurnya "+ this.umur
+					},
+					set :function  (params) {
+						var credential = params.split(' ');
+						this.nama = credential[0]
+						this.umur = credential[1]
+					}
+				}
+			}
+					
+		})
+	</script>
+</body>
+</html>
+
+<!-- directive adlah fungsi2 yang sudah datng dari funginya
+contoh kita bisa bikin if, else, ada untuk loop
+jadi fungsi2 yang sudah dateng dari viewnya kita tinggal pakai -->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar vue</title>
+</head>
+<body>
+
+<div id="app">
+<input type="text" v-model="texty">
+	<p> {{ texty }}</p>
+	<br>
+
+	<input type="checkbox" v-model="genre" value="cowok"> laki2
+	<input type="checkbox" v-model="genre" value="cewek"> perempuan
+
+	{{ genre }}
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		var vo = new Vue({
+			el : '#app',
+			data: {
+				genre:[]
+			}
+		})
+	</script>
+</body>
+</html>
+
+<!-- directive adlah fungsi2 yang sudah datng dari funginya
+contoh kita bisa bikin if, else, ada untuk loop
+jadi fungsi2 yang sudah dateng dari viewnya kita tinggal pakai -->

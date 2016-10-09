@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar vue</title>
+</head>
+<body>
+
+<div id="app">
+<div v-for="items in members">
+	{{ items.nama }} - {{ items.umur }}
+</div >
+	
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		var vo = new Vue({
+			el : '#app',
+			data: {
+				members : [
+				{nama :'aan',umur:12},
+				{nama :'aan1',umur:13},
+				{nama :'aan2',umur:14},
+
+				]
+			}
+		})
+	</script>
+</body>
+</html>
+
+<!-- directive adlah fungsi2 yang sudah datng dari funginya
+contoh kita bisa bikin if, else, ada untuk loop
+jadi fungsi2 yang sudah dateng dari viewnya kita tinggal pakai -->

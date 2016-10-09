@@ -1,0 +1,75 @@
+<!-- termask system templating, kalau mau pakek tempalte berkali2 nah itu bisa pakai componen -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar vue</title>
+	<style>
+		.fade-transition{
+			transition: opacity .5s ease;
+		}	
+		.fade-enter, .fade-leave{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+
+<div id="app">
+	<ul>
+		<li><<a href="#" @click="currentView='home'">Home</a></li>
+		<li><<a href="#" @click="currentView='members'">member</a></li>
+		
+	</ul>
+	
+	<component :is="currentView" transition="fade" transition-mode="out-in" ></component>
+	<!-- <component :is="currentView" keep-alive></component>  kaya punya case jadi gak perlu render ualng-->
+
+
+</div>
+
+<template id="home-template">
+	<h2>selmat datang di anwar</h2>
+</template>
+<template id="member-template">
+	<<ul>
+		<li v-for="member in members">{{ member }}</li>
+	</ul>
+</template>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		
+	Vue.component('home',{
+		template:'#home-template'
+
+	})
+
+	Vue.component('members',{
+		template:'#member-template',
+		data:function () {
+			return{
+				members:['lonfo','testing']
+			}
+		}
+
+	})
+
+		var vo = new Vue({
+		
+			el: "#app",
+			data:{
+				currentView :'home'
+			}
+		
+		})
+	</script>
+</body>
+</html>
+
+<!-- directive adlah fungsi2 yang sudah datng dari funginya
+contoh kita bisa bikin if, else, ada untuk loop
+jadi fungsi2 yang sudah dateng dari viewnya kita tinggal pakai -->
+
+
+transition di sedaiakan oleh vuejs, kita tinggal memakainya

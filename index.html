@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar vue</title>
+</head>
+<body>
+<div id="app">
+	{{ nama + " hidayat" }}
+	{{ nama.split('').reverse().join('') }}
+
+	<!-- {{* nama }} -->
+	<!-- tanda bintang digunakan agar tidak di ubah di bowser -->
+
+	{{ umur }}
+	{{ raw }}
+	{{ laki ? 'bnar' : 'salah'}}
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		var vo = new Vue({
+			//elemen
+			el:'#app',
+			data:{
+				nama : 'anwar',
+				umur :'23',
+				raw :'<p> testing raw htl</p>',
+				laki : true
+			}
+					
+		})
+	</script>
+</body>
+</html>

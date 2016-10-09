@@ -1,0 +1,49 @@
+<!-- termask system templating, kalau mau pakek tempalte berkali2 nah itu bisa pakai componen -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar vue</title>
+</head>
+<body>
+
+<div id="app">
+<template-baru message = "pesan ebrdara"> </template-baru>
+
+</div>
+
+
+<template id="post-template">
+	<div>
+		<ul>
+			<li>anwar hidayat1</li>
+			<li>anwar hidayat2</li>
+			<li>{{ message }}</li>
+
+		</ul>	
+	</div>
+</template>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+		// var templateBaru = Vue.extend({
+		// 	template:'<b> Anwar hiadadas</b>'
+		// })
+		// //register componen
+		// Vue.component('template-baru',templateBaru)
+		
+		// atau langsung define and register
+		Vue.component('template-baru',{
+			template:'#post-template',
+			props:['message']
+		});
+
+
+		var vo = new Vue({
+			el:'#app'
+		})
+	</script>
+</body>
+</html>
+
+<!-- directive adlah fungsi2 yang sudah datng dari funginya
+contoh kita bisa bikin if, else, ada untuk loop
+jadi fungsi2 yang sudah dateng dari viewnya kita tinggal pakai -->
